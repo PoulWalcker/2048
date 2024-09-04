@@ -39,7 +39,7 @@ def init_const():
 
 
 if 'data.txt' in os.listdir(path):
-    with open('data.txt') as file:
+    with open('resources/data.txt') as file:
         data = json.load(file)
         matrix = data['matrix']
         username = data['username']
@@ -127,7 +127,7 @@ def draw_interface(game_score, delta=0):
 
 def draw_intro():
     global username
-    img = pygame.image.load('2048.png')
+    img = pygame.image.load('resources/2048.png')
     font = pygame.font.SysFont('stxingkai', 70)
     font_welcome = font.render('Welcome', True, WHITE)
     name = 'Enter name'
@@ -165,7 +165,7 @@ def draw_intro():
 
 def draw_game_over():
     global username, matrix, score, GAMERS_DB
-    img = pygame.image.load('2048.png')
+    img = pygame.image.load('resources/2048.png')
     font = pygame.font.SysFont('stxingkai', 65)
     text_game_over = font.render('Game over', True, WHITE)
     text_score = font.render(f'Score: {score}', True, WHITE)
@@ -208,7 +208,7 @@ def save_game():
         'score': score,
         'matrix': matrix
     }
-    with open('data.txt', 'w', encoding='utf-8') as outfile:
+    with open('resources/data.txt', 'w', encoding='utf-8') as outfile:
         json.dump(data, outfile)
 
 

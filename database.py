@@ -1,6 +1,6 @@
 import sqlite3
 
-bd = sqlite3.connect('2048.sql')
+bd = sqlite3.connect('resources/2048.sql')
 cursor = bd.cursor()
 
 cursor.execute(("""
